@@ -1,0 +1,14 @@
+type Ball @loadModel(id: "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9") {
+  id: ID!
+}
+
+type World @loadModel(id: "kjzl6hvfrbw6c83mwwrjsxw1ahu6y3ln31aj4fhmddy5zm4fz1952xn3e0vuxsg"){
+  id: ID!
+}
+
+type BallRelation @createModel(accountRelation: LIST, description: "Relate a ball to our world") {
+  ballID: StreamID! @documentReference(model: "Ball")
+  ball: Ball! @relationDocument(property: "ballID")
+  worldID: StreamID! @documentReference(model: "World")
+  world: World! @relationDocument(property: "worldID")
+}

@@ -1,0 +1,9 @@
+type Obstacle @createModel(accountRelation: LIST, description: "An obstacle a ball can collide with") {
+  creator: DID! @accountReference
+  x: Int
+  y: Int
+  z: Int
+  length: Int
+  width: Int
+  height: Int
+}

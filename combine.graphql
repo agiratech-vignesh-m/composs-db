@@ -1,0 +1,17 @@
+type Ball @loadModel(id: "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9") {
+  id: ID!
+}
+
+type Obstacle @loadModel(id: "kjzl6hvfrbw6c8djivpsb6gfeoxwo6oefiun4qq2juq48uvbejxxmmjvbh622wn"){
+  id: ID!
+}
+
+type Collision @createModel(accountRelation: LIST, description: "Collision between ball and object") {
+  ballID: StreamID! @documentReference(model: "Ball")
+  ball: Ball! @relationDocument(property: "ballID")
+  obstacleID: StreamID! @documentReference(model: "Obstacle")
+  obstacle: Ball! @relationDocument(property: "ballID")
+  x: Int
+  y: Int
+  z: Int
+}

@@ -1,0 +1,73 @@
+{
+    "models": {
+        "Hospital": {
+            "id": "kjzl6hvfrbw6cb87mrq713wrxsodotzffsiqbs7d7xuxu2zgkpoutlkkp5j2et0",
+            "accountRelation": {
+                "type": "list"
+            }
+        },
+        "Health": {
+            "id": "kjzl6hvfrbw6c9u78s1zvfgug8qqa977o5rts9ebcmzr9ncifawdxoqmc0uk2f0",
+            "accountRelation": {
+                "type": "list"
+            }
+        }
+    },
+    "objects": {
+        "Hospital": {
+            "Location": {
+                "type": "string",
+                "required": true
+            },
+            "hospitalID": {
+                "type": "integer",
+                "required": true
+            },
+            "speciality": {
+                "type": "string",
+                "required": true
+            },
+            "hospitalName": {
+                "type": "string",
+                "required": true
+            }
+        },
+        "Health": {
+            "age": {
+                "type": "integer",
+                "required": true
+            },
+            "visit": {
+                "type": "integer",
+                "required": true
+            },
+            "bloodType": {
+                "type": "string",
+                "required": true
+            },
+            "condition": {
+                "type": "string",
+                "required": true
+            },
+            "patientName": {
+                "type": "string",
+                "required": true
+            },
+            "currentStatus": {
+                "type": "string",
+                "required": true
+            }
+        }
+    },
+    "enums": {},
+    "accountData": {
+        "hospitalList": {
+            "type": "connection",
+            "name": "Hospital"
+        },
+        "healthList": {
+            "type": "connection",
+            "name": "Health"
+        }
+    }
+}

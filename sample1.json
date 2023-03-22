@@ -1,0 +1,131 @@
+{
+    "models": {
+        "Ball": {
+            "id": "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9",
+            "accountRelation": {
+                "type": "list"
+            }
+        },
+        "Obstacle": {
+            "id": "kjzl6hvfrbw6c8djivpsb6gfeoxwo6oefiun4qq2juq48uvbejxxmmjvbh622wn",
+            "accountRelation": {
+                "type": "list"
+            }
+        },
+        "Collision": {
+            "id": "kjzl6hvfrbw6c7xl5heob2p5hsovrux4rbaqmwvz4euc4jqpu3amqd4u46t53o6",
+            "accountRelation": {
+                "type": "list"
+            }
+        }
+    },
+    "objects": {
+        "Ball": {
+            "red": {
+                "type": "integer",
+                "required": false
+            },
+            "blue": {
+                "type": "integer",
+                "required": false
+            },
+            "green": {
+                "type": "integer",
+                "required": false
+            },
+            "radius": {
+                "type": "float",
+                "required": false
+            },
+            "creator": {
+                "type": "did",
+                "required": true
+            }
+        },
+        "Obstacle": {
+            "x": {
+                "type": "integer",
+                "required": false
+            },
+            "y": {
+                "type": "integer",
+                "required": false
+            },
+            "z": {
+                "type": "integer",
+                "required": false
+            },
+            "width": {
+                "type": "integer",
+                "required": false
+            },
+            "height": {
+                "type": "integer",
+                "required": false
+            },
+            "length": {
+                "type": "integer",
+                "required": false
+            },
+            "creator": {
+                "type": "did",
+                "required": true
+            }
+        },
+        "Collision": {
+            "x": {
+                "type": "integer",
+                "required": false
+            },
+            "y": {
+                "type": "integer",
+                "required": false
+            },
+            "z": {
+                "type": "integer",
+                "required": false
+            },
+            "ballID": {
+                "type": "streamid",
+                "required": true
+            },
+            "obstacleID": {
+                "type": "streamid",
+                "required": true
+            },
+            "ball": {
+                "type": "view",
+                "viewType": "relation",
+                "relation": {
+                    "source": "document",
+                    "model": "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9",
+                    "property": "ballID"
+                }
+            },
+            "obstacle": {
+                "type": "view",
+                "viewType": "relation",
+                "relation": {
+                    "source": "document",
+                    "model": "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9",
+                    "property": "ballID"
+                }
+            }
+        }
+    },
+    "enums": {},
+    "accountData": {
+        "ballList": {
+            "type": "connection",
+            "name": "Ball"
+        },
+        "obstacleList": {
+            "type": "connection",
+            "name": "Obstacle"
+        },
+        "collisionList": {
+            "type": "connection",
+            "name": "Collision"
+        }
+    }
+}

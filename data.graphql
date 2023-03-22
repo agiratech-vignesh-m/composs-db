@@ -1,0 +1,8 @@
+type Health @createModel(accountRelation: LIST, description: "Patient Health Info") {
+  patientName: String! @string(maxLength: 30)
+  bloodType: String! @string(maxLength: 5)
+  dateOfBirth: Int! @int(min: 1, max: 20)
+  condition: String! @string(maxLength: 20)
+  diagnosisDate: String! @string(maxLength: 20)
+  status: String! @string(maxLength: 20)
+}

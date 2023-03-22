@@ -1,0 +1,104 @@
+{
+    "models": {
+        "Ball": {
+            "id": "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9",
+            "accountRelation": {
+                "type": "list"
+            }
+        },
+        "World": {
+            "id": "kjzl6hvfrbw6c83mwwrjsxw1ahu6y3ln31aj4fhmddy5zm4fz1952xn3e0vuxsg",
+            "accountRelation": {
+                "type": "list"
+            }
+        },
+        "BallRelation": {
+            "id": "kjzl6hvfrbw6ca24ba58q9abpxf4br0oe9vv4o1ks70i9zi2bmwlyodqyf2936u",
+            "accountRelation": {
+                "type": "list"
+            }
+        }
+    },
+    "objects": {
+        "Ball": {
+            "red": {
+                "type": "integer",
+                "required": false
+            },
+            "blue": {
+                "type": "integer",
+                "required": false
+            },
+            "green": {
+                "type": "integer",
+                "required": false
+            },
+            "radius": {
+                "type": "float",
+                "required": false
+            },
+            "creator": {
+                "type": "did",
+                "required": true
+            }
+        },
+        "World": {
+            "name": {
+                "type": "string",
+                "required": true
+            },
+            "balls": {
+                "type": "view",
+                "viewType": "relation",
+                "relation": {
+                    "source": "queryConnection",
+                    "model": "kjzl6hvfrbw6c83mwwrjsxw1ahu6y3ln31aj4fhmddy5zm4fz1952xn3e0vuxsg",
+                    "property": "worldID"
+                }
+            }
+        },
+        "BallRelation": {
+            "ballID": {
+                "type": "streamid",
+                "required": true
+            },
+            "worldID": {
+                "type": "streamid",
+                "required": true
+            },
+            "ball": {
+                "type": "view",
+                "viewType": "relation",
+                "relation": {
+                    "source": "document",
+                    "model": "kjzl6hvfrbw6c6b08p82lmy0pp9f7lujz2nn0laizaowcmgrlhbongcnut7a4m9",
+                    "property": "ballID"
+                }
+            },
+            "world": {
+                "type": "view",
+                "viewType": "relation",
+                "relation": {
+                    "source": "document",
+                    "model": "kjzl6hvfrbw6c83mwwrjsxw1ahu6y3ln31aj4fhmddy5zm4fz1952xn3e0vuxsg",
+                    "property": "worldID"
+                }
+            }
+        }
+    },
+    "enums": {},
+    "accountData": {
+        "ballList": {
+            "type": "connection",
+            "name": "Ball"
+        },
+        "worldList": {
+            "type": "connection",
+            "name": "World"
+        },
+        "ballRelationList": {
+            "type": "connection",
+            "name": "BallRelation"
+        }
+    }
+}

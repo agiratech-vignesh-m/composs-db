@@ -1,0 +1,7 @@
+type BallRelation @loadModel(id: "kjzl6hvfrbw6c83mwwrjsxw1ahu6y3ln31aj4fhmddy5zm4fz1952xn3e0vuxsg") {
+  id: ID!
+}
+
+type World @loadModel(id: "kjzl6hvfrbw6c83mwwrjsxw1ahu6y3ln31aj4fhmddy5zm4fz1952xn3e0vuxsg") {
+  balls: [BallRelation] @relationFrom(model: "BallRelation", property: "worldID")
+}
