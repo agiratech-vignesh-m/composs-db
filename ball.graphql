@@ -1,7 +1,0 @@
-type Ball @createModel(accountRelation: LIST, description: "A ball to display") {
-  creator: DID! @accountReference
-  red: Int
-  green: Int
-  blue: Int
-  radius: Float
-}

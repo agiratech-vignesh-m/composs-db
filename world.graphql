@@ -1,3 +1,0 @@
-type World @createModel(accountRelation: LIST, description: "Ball World") {
-  name: String! @string(minLength: 3, maxLength: 50)
-}

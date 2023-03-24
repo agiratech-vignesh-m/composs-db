@@ -12,4 +12,4 @@ type Hospital @createModel(accountRelation: LIST, description: "Hospital Info") 
   hospitalName: String! @string(maxLength: 20)
   Location: String! @string(maxLength: 20)
   speciality: String! @string(maxLength: 20)
-}
+} 
